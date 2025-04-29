@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORGI – Binary Evaluation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Re‑use top nav -->
+  <header class="top-bar">
+    <div class="action-buttons">
+      <a href="index.html" class="btn">Evaluate!</a>
+      <a href="#contribute" class="btn">Contribute!</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="images/corgi.png" alt="Corgi logo" class="corgi-logo">
+    <h1>CORGI <span class="subhead">SQL Benchmark</span></h1>
+  </section>
+
+  <!-- ===== Plain question ===== -->
+  <section class="plain-question">
+    <h3>This is the question in plain English!</h3>
+    <textarea class="question-box" readonly>blah blah blah</textarea>
+  </section>
+
+  <!-- ===== Binary comparison ===== -->
+  <h3 class="compare-heading">Which is the better response?</h3>
+  <section class="binary-compare">
+    <table class="binary-table">
+      <thead>
+        <tr><th>Llama4</th><th>GPT‑o3</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="resp-card">blah blah blah</div></td>
+          <td><div class="resp-card"></div></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><button class="select-btn">Llama 4 wrote the better recommendation</button></td>
+          <td><button class="select-btn">GPT‑o3 wrote the better recommendation</button></td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <!-- ===== Ranking explanation ===== -->
+  <h2 class="submit-heading">How is this ranked?</h2>
+  <section class="submit-section">
+    <div class="submit-box large"><textarea readonly>This dataset is blah blahblah  HAS NO TRAIN\nSPLIT</textarea></div>
+  </section>
+
+  <footer>
+    <p class="supported">Supported by:</p>
+    <div class="supporters">
+      <img src="images/cornell_logo.png" alt="Cornell University" class="support-logo">
+      <img src="images/gena_logo.png" alt="GENA" class="support-logo small">
+    </div>
+  </footer>
+</body>
+</html>

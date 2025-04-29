@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CORGI – Soft‑Eval Details</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="action-buttons">
+      <a href="index.html" class="btn">Evaluate!</a>
+      <a href="#contribute" class="btn">Contribute!</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="images/corgi.png" alt="Corgi logo" class="corgi-logo" />
+    <h1>CORGI <span class="subhead">SQL Benchmark</span></h1>
+  </section>
+
+  <!-- prompt‑to‑model table with horizontal sliders -->
+  <section class="soft-eval-table">
+    <table class="soft-table">
+      <thead>
+        <tr>
+          <th class="prompt-col">Query &amp; Prompt</th>
+          <th colspan="2" class="rated-range">
+            <span>Best Rated Model</span>
+            <hr />
+            <span>Worst Rated Model</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example row. Duplicate as needed. -->
+        <tr class="soft-row">
+          <td>
+            <div class="cell prompt">prompt example</div>
+          </td>
+          <td colspan="2" class="model-cell">
+            <!-- horizontally scrollable wrapper -->
+            <div class="model-scroll-wrapper">
+              <div class="cell model-card"></div>
+              <div class="cell model-card"></div>
+              <div class="cell model-card"></div>
+              <div class="cell model-card"></div>
+              <div class="cell model-card"></div>
+            </div>
+          </td>
+        </tr>
+        <!-- more .soft-row blocks ... -->
+      </tbody>
+    </table>
+  </section>
+
+  <h2 class="submit-heading">How is this evaluated?</h2>
+  <section class="submit-section">
+    <div class="submit-box large"><textarea readonly></textarea></div>
+  </section>
+
+  <footer>
+    <p class="supported">Supported by:</p>
+    <div class="supporters">
+      <img src="images/cornell_logo.png" alt="Cornell University" class="support-logo" />
+      <img src="images/gena_logo.png" alt="GENA" class="support-logo small" />
+    </div>
+  </footer>
+
+  <script src="soft-eval.js"></script>
+</body>
+</html>
