@@ -15,7 +15,7 @@ a{color:inherit;text-decoration:none}
 .action-buttons a{margin-left:12px}
 
 /* ---- Hero/logo ---- */
-.hero{text-align:center;padding:48px 12px 32px}.corgi-logo{width:300px;height:auto;margin-bottom:12px}.hero h1{font-size:56px;font-weight:800}.hero .subhead{display:block;font-size:24px;font-weight:400;margin-top:4px}
+.hero{text-align:center;padding:90px 12px 50px}.corgi-logo{width:300px;height:auto;margin-bottom:12px}.hero h1{font-size:56px;font-weight:800}.hero .subhead{display:block;font-size:24px;font-weight:400;margin-top:4px}
 
 /* ---- Scoreboards & Title ---- */
 .scoreboards{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;align-items:flex-start}
@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .scoreboards{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding:0 24px 48px}.scoreboard{width:320px}.scoreboard h2{font-size:18px;font-weight:700;margin-bottom:8px}.scoreboard table{width:100%;border-collapse:collapse;border:1px solid #ccc}.scoreboard th,.scoreboard td{border:1px solid #ccc;padding:6px 8px;font-size:14px;text-align:center}.scoreboard tbody tr:nth-child(even){background:#f7f7f7}
 
 /* ---- Submit boxes ---- */
-.submit-heading{text-align:center;font-size:28px;font-weight:700;margin-bottom:0}
+.submit-heading{text-align:center;font-size:28px;font-weight:700;margin-bottom:0;padding-top:50px}
 .submit-section{background:#a61010;color:#fff;padding:48px 24px;display:flex;justify-content:center}
 .submit-box{position:relative;max-width:720px;width:100%}
 .submit-box textarea{width:100%;height:220px;padding:12px;font-size:16px;resize:none;border:none;font-family:inherit}
@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 .submit-box.large textarea{height:300px}
 
 /* ---- Footer ---- */
-footer{text-align:center;padding:56px 24px}.supported{font-weight:600;margin-bottom:12px}.supporters{display:flex;justify-content:center;align-items:center;gap:48px}.support-logo{height:48px;width:auto}.support-logo.small{height:36px}
+footer{text-align:center;padding:56px 24px}.supported{font-weight:600;margin-bottom:12px;padding-top:100px}.supporters{display:flex;justify-content:center;align-items:center;gap:48px}.support-logo{height:48px;width:auto}.support-logo.small{height:36px}
 
 /* ---- Responsive tweaks ---- */
 @media(max-width:768px){.scoreboards{flex-direction:column;align-items:center}.scoreboard{width:100%;max-width:380px}}
@@ -57,9 +57,9 @@ footer{text-align:center;padding:56px 24px}.supported{font-weight:600;margin-bot
    Binary‑eval specific styles
    ============================= */
 .plain-question{padding:0;max-width:900px;margin:0 auto}.plain-question h3{font-size:16px;font-weight:700;margin:0 0 6px 2px}.question-box{width:100%;height:140px;padding:12px;font-size:15px;border:2px solid #000;resize:none;font-family:inherit}
-.compare-heading{text-align:left;max-width:900px;margin:0 auto 8px;font-size:16px;font-weight:700;padding:0 24px}
+.compare-heading{text-align:left;max-width:900px;margin:0 auto 8px;font-size:16px;font-weight:700;padding-top:40px}
 .binary-compare{padding:0 24px 48px}
-.binary-table{width:100%;max-width:900px;margin:0 auto;border-collapse:collapse;border:2px solid #666}
+.binary-table{width:100%;max-width:900px;margin:0 auto;border-collapse:collapse}
 .binary-table thead th{background:#444;color:#fff;font-size:12px;font-weight:600;padding:4px 8px;text-align:center}
 .binary-table tbody td{padding:0;border-right:2px solid #bfbfbf}
 .binary-table tbody td:last-child{border-right:0}
@@ -87,3 +87,11 @@ footer{text-align:center;padding:56px 24px}.supported{font-weight:600;margin-bot
 
 /* responsive – stack if screen narrow */
 @media(max-width:768px){.soft-row .model-card{width:220px; height:100px; display: inline-block; float: none}}
+
+/* -------- Contribute page -------- */
+.section-header{background:#f2f2f2;padding:24px 12px;text-align:center;font-size:28px;font-weight:700;margin:0}
+.contrib-section{padding:48px 24px}
+.contribute-box{border:16px solid #a61010;background:#fff;min-height:600px;width:100%;max-width:900px;margin:0 auto}
+.contribute-box textarea{width:100%;height:100%;min-height:568px;border:none;padding:12px;font-size:16px;resize:none;font-family:inherit}
+
+@media(max-width:768px){.contribute-box{border-width:12px}}
