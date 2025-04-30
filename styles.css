@@ -29,8 +29,8 @@ a{color:inherit;text-decoration:none}
 .submit-heading{text-align:center;font-size:28px;font-weight:500;margin-bottom:0;padding-top:50px}
 .submit-section{background:#a61010;color:#fff;padding:48px 24px;display:flex;justify-content:center}
 .submit-box{position:relative;max-width:720px;width:100%}
-.submit-box textarea{width:100%;height:220px;padding:12px;font-size:16px;resize:none;border:none;font-family:inherit}
-.submit-box button{position:absolute;right:12px;bottom:12px}
+.submit-box textarea{width:100%;height:400px;padding:12px;font-size:16px;resize:none;border:none;font-family:inherit}
+.submit-box button{right:12px;bottom:12px}
 .submit-box.large textarea{height:300px}
 
 /* ---- Footer ---- */
