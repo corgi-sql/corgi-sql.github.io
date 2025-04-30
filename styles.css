@@ -5,7 +5,7 @@ body{font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;color:#000;backg
 a{color:inherit;text-decoration:none}
 
 /* ---- Buttons ---- */
-.btn{background:#fff;border:0;border-radius:10px;padding:6px 18px;font-weight:700;cursor:pointer;transition:opacity .2s}.btn:hover{opacity:.85}
+.btn{background:#fff;border:0;border-radius:10px;padding:4px 10px;font-weight:500;cursor:pointer;transition:opacity .2s}.btn:hover{opacity:.85}
 .btn-light{background:#e6e6e6;border:none;border-radius:4px;padding:6px 16px;font-weight:600;cursor:pointer}
 .select-btn{background:#a61010;border:0;border-radius:0;padding:8px 12px;font-weight:600;color:#fff;width:100%;cursor:pointer}
 .select-btn:hover{opacity:.9}
@@ -20,13 +20,13 @@ a{color:inherit;text-decoration:none}
 /* ---- Scoreboards & Title ---- */
 .scoreboards{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;align-items:flex-start}
 .scoreboard{width:320px}
-.scoreboard h2{font-size:18px;font-weight:700;margin-bottom:8px}
+.scoreboard h2{font-size:18px;font-weight:400;margin-bottom:8px}
 
 /* ---- Index & soft eval shared ---- */
 .scoreboards{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding:0 24px 48px}.scoreboard{width:320px}.scoreboard h2{font-size:18px;font-weight:700;margin-bottom:8px}.scoreboard table{width:100%;border-collapse:collapse;border:1px solid #ccc}.scoreboard th,.scoreboard td{border:1px solid #ccc;padding:6px 8px;font-size:14px;text-align:center}.scoreboard tbody tr:nth-child(even){background:#f7f7f7}
 
 /* ---- Submit boxes ---- */
-.submit-heading{text-align:center;font-size:28px;font-weight:700;margin-bottom:0;padding-top:50px}
+.submit-heading{text-align:center;font-size:28px;font-weight:500;margin-bottom:0;padding-top:50px}
 .submit-section{background:#a61010;color:#fff;padding:48px 24px;display:flex;justify-content:center}
 .submit-box{position:relative;max-width:720px;width:100%}
 .submit-box textarea{width:100%;height:220px;padding:12px;font-size:16px;resize:none;border:none;font-family:inherit}
