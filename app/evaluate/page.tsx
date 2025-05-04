@@ -29,7 +29,7 @@ function EvaluatePage() {
   const modelTwoResponse = data.modelTwoResponse;
 
   return (
-    <div className="md:p-8">
+    <div>
       <div id="corgi-logo" className="mb-4 sm:mb-8">
         <Image
           src={corgiLogo}
