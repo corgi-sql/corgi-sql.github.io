@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build && next export -o docs"
+    "build": "next build"
   },
   "dependencies": {
     "@heroui/react": "^2.7.8",
