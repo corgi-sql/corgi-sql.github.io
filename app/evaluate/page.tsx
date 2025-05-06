@@ -32,7 +32,7 @@ function EvaluatePage() {
   const optionOneText = "Option 1";
   const optionTwoText = "Option 2";
   const optionOneBetterText = "Option 1 is the better response";
-  const optionTwoBetterText = "Option 1 is the better response";
+  const optionTwoBetterText = "Option 2 is the better response";
 
   return (
     <div>
