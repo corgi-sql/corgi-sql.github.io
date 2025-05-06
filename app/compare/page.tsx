@@ -2,8 +2,11 @@
 
 import { ReactNode, useActionState, useState, useEffect } from "react";
 import Image from "next/image";
-import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
 import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
   Table,
   TableHeader,
   TableColumn,
@@ -98,37 +101,54 @@ function ComparePage() {
 
   return (
     <div>
-      <div id="corgi-logo">
-        <Image
-          src={corgiLogo}
-          width={500}
-          height={500}
-          alt="Corgi logo"
-        />
+      <div className="container flex-grow mx-auto max-w-7xl px-2 pt-2 sm:px-6 sm:pt-4">
+        <div id="corgi-logo">
+          <Image
+            src={corgiLogo}
+            width={500}
+            height={500}
+            alt="Corgi logo"
+          />
+        </div>
+        <div id="compareTable">
+          {data.map((row, index1) => (
+            <div key={"row" + index1}>
+              <div className="mb-4 mt-8">
+                {row.prompt}
+              </div>
+              <div className="border border-3 rounded-md flex flex-nowrap overflow-x-auto gap-4 p-4">
+                {row.responses.map((response, index2) => (
+                  <div className="flex-none w-96" key={"row" + index1 + "response" + index2}>
+                    <Card className="max-h-80 overflow-y-auto">
+                      <CardHeader className="justify-between">
+                        <div>{response.model}</div>
+                        <div>{response.score}</div>
+                      </CardHeader>
+                      <CardBody>
+                        {response.response}
+                      </CardBody>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div id="compareTable">
-        {data.map((row, index1) => (
-          <div key={"row" + index1}>
-            <div className="mb-4 mt-8">
-              {row.prompt}
-            </div>
-            <div className="border border-3 rounded-md flex flex-nowrap overflow-x-auto gap-4 p-4">
-              {row.responses.map((response, index2) => (
-                <div className="flex-none w-96" key={"row" + index1 + "response" + index2}>
-                  <Card className="max-h-80 overflow-y-auto">
-                    <CardHeader className="justify-between">
-                      <div>{response.model}</div>
-                      <div>{response.score}</div>
-                    </CardHeader>
-                    <CardBody>
-                      {response.response}
-                    </CardBody>
-                  </Card>
-                </div>
-              ))}
-            </div>
+      <div className="bg-carnelian mt-16">
+        <div className="container flex-grow mx-auto max-w-4xl py-20">
+          <Card>
+            <CardBody>
+              <div className="whitespace-pre-wrap p-8">
+              {"Hello! This is the CORGI SQL benchmark. The CORGI benchmark was made to push the boundaries of txt2sql in the generative AI era. There are a few noticeable differences between CORGI and previous txt2sql benchmarks:\n    1. x% of the questions are recommendation or prediction based natural language queries. These queries are \"soft evaluated\" with human input.\n    2. CORGIv1.0 has business domain databases and queries, designed to test domain-specific lingo.\n    3. There are many more tables and relations per database in CORGI than previous benchmarks.\n    4. There is no test split. Groups are free to experiment with zero-shot/template methods or generate train data themselves. \n    For more information, check out our paper! For citation, use: XXXXXXX. Happy CORGI-ing!"}
+              </div>
+            </CardBody>
+          </Card>
+          <div className="flex mt-8 gap-8 justify-center">
+            <Button className="w-64">{"CORGI v1.0 Dev Split"}</Button>
+            <Button className="w-64">{"CORGI Paper"}</Button>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

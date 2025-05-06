@@ -20,7 +20,7 @@ function NavbarLink({ label, link, matchingLinks }: Props) {
       <NextLink
         className={
           isActive
-            ? "font-medium relative after:content-[''] after:block after:w-full after:h-[2px] after:bg-primary after:absolute after:bottom-0"
+            ? "font-medium relative after:content-[''] after:block after:w-full after:h-[2px] after:bg-white after:absolute after:bottom-0"
             : ""
         }
         color="foreground"

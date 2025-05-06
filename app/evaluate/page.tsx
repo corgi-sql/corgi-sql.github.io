@@ -6,6 +6,8 @@ import genaLogo from "@/assets/gena_logo.png";
 import cornellLogo from "@/assets/cornell_logo.png";
 import {
   Button,
+  Card,
+  CardBody,
   Table,
   TableHeader,
   TableColumn,
@@ -27,101 +29,121 @@ function EvaluatePage() {
   const modelTwo = data.modelTwo;
   const modelOneResponse = data.modelOneResponse;
   const modelTwoResponse = data.modelTwoResponse;
+  const optionOneText = "Option 1";
+  const optionTwoText = "Option 2";
+  const optionOneBetterText = "Option 1 is the better response";
+  const optionTwoBetterText = "Option 1 is the better response";
 
   return (
     <div>
-      <div id="corgi-logo" className="mb-4 sm:mb-8">
-        <Image
-          src={corgiLogo}
-          width={500}
-          height={500}
-          alt="Corgi logo"
-        />
-      </div>
-
-      <div className="max-w-xl m-auto">
-        <div className="pb-4 text-center">
-          <h2>{"This is the prompt in plain English"}</h2>
+      <div className="container flex-grow mx-auto max-w-7xl px-2 pt-2 sm:px-6 sm:pt-4">
+        <div id="corgi-logo" className="mb-4 sm:mb-8">
+          <Image
+            src={corgiLogo}
+            width={500}
+            height={500}
+            alt="Corgi logo"
+          />
         </div>
-        <Table hideHeader removeWrapper layout="fixed">
-          <TableHeader>
-            <TableColumn className="border text-center">{""}</TableColumn>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="border align-text-top">{prompt}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </div>
 
+        <div className="max-w-xl m-auto">
+          <div className="pb-4 text-center">
+            <h2>{"This is the prompt in plain English"}</h2>
+          </div>
+          <Table hideHeader removeWrapper layout="fixed">
+            <TableHeader>
+              <TableColumn className="border text-center">{""}</TableColumn>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border align-text-top">{prompt}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
 
-      <div className="pt-4 sm:pt-8 pb-4 text-center">
-        <h2>{"Which is the better response?"}</h2>
-      </div>
-      <div id="desktopBetterResponseTable" className="flex hidden md:block">
-        <Table removeWrapper layout="fixed">
-          <TableHeader>
-            <TableColumn className="border text-center">{modelOne}</TableColumn>
-            <TableColumn className="border text-center">{modelTwo}</TableColumn>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="border align-text-top">
-                <div className="max-h-64 overflow-y-auto blur-bottom">
-                {modelOneResponse}
-                </div>
-              </TableCell>
-              <TableCell className="border align-text-top">
-                <div className="max-h-64 overflow-y-auto">
-                  {modelTwoResponse}
-                </div>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="border text-center">
-                <Button className="bg-carnelian text-white">{modelOne}{" wrote the better recommendation"}</Button>
-              </TableCell>
-              <TableCell className="border text-center">
-                <Button className="bg-carnelian text-white">{modelTwo}{" wrote the better recommendation"}</Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </div>
+        <div className="pt-4 sm:pt-8 pb-4 text-center">
+          <h2>{"Which is the better response?"}</h2>
+        </div>
+        <div id="desktopBetterResponseTable" className="flex hidden md:block">
+          <Table removeWrapper layout="fixed">
+            <TableHeader>
+              <TableColumn className="border text-center">{optionOneText}</TableColumn>
+              <TableColumn className="border text-center">{optionTwoText}</TableColumn>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border align-text-top">
+                  <div className="max-h-64 overflow-y-auto blur-bottom">
+                  {modelOneResponse}
+                  </div>
+                </TableCell>
+                <TableCell className="border align-text-top">
+                  <div className="max-h-64 overflow-y-auto">
+                    {modelTwoResponse}
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border text-center">
+                  <Button className="bg-carnelian text-white">{optionOneBetterText}</Button>
+                </TableCell>
+                <TableCell className="border text-center">
+                  <Button className="bg-carnelian text-white">{optionTwoBetterText}</Button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
 
-      <div  id="mobileBetterResponseTable" className="md:hidden">
-        <Table layout="fixed">
-          <TableHeader>
-            <TableColumn className="border text-center">{modelOne}</TableColumn>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="border align-text-top">{modelOneResponse}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="border text-center">
-                <Button className="bg-carnelian text-white">{modelOne}{" wrote the better recommendation"}</Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        <div className="mb-4" />
-        <Table layout="fixed">
-          <TableHeader>
-            <TableColumn className="border text-center">{modelTwo}</TableColumn>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="border align-text-top">{modelTwoResponse}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="border text-center">
-                <Button className="bg-carnelian text-white">{modelTwo}{" wrote the better recommendation"}</Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <div id="mobileBetterResponseTable" className="md:hidden">
+          <Table layout="fixed">
+            <TableHeader>
+              <TableColumn className="border text-center">{optionOneText}</TableColumn>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border align-text-top">{modelOneResponse}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border text-center">
+                  <Button className="bg-carnelian text-white">{optionOneBetterText}</Button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <div className="mb-4" />
+          <Table layout="fixed">
+            <TableHeader>
+              <TableColumn className="border text-center">{optionTwoText}</TableColumn>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border align-text-top">{modelTwoResponse}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border text-center">
+                  <Button className="bg-carnelian text-white">{optionTwoBetterText}</Button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+      <div className="bg-carnelian mt-16">
+        <div className="container flex-grow mx-auto max-w-4xl py-20">
+          <Card>
+            <CardBody>
+              <div className="whitespace-pre-wrap p-8">
+              {"Hello! This is the CORGI SQL benchmark. The CORGI benchmark was made to push the boundaries of txt2sql in the generative AI era. There are a few noticeable differences between CORGI and previous txt2sql benchmarks:\n    1. x% of the questions are recommendation or prediction based natural language queries. These queries are \"soft evaluated\" with human input.\n    2. CORGIv1.0 has business domain databases and queries, designed to test domain-specific lingo.\n    3. There are many more tables and relations per database in CORGI than previous benchmarks.\n    4. There is no test split. Groups are free to experiment with zero-shot/template methods or generate train data themselves. \n    For more information, check out our paper! For citation, use: XXXXXXX. Happy CORGI-ing!"}
+              </div>
+            </CardBody>
+          </Card>
+          <div className="flex mt-8 gap-8 justify-center">
+            <Button className="w-64">{"CORGI v1.0 Dev Split"}</Button>
+            <Button className="w-64">{"CORGI Paper"}</Button>
+          </div>
+        </div>
       </div>
     </div>
   );

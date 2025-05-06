@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import type { Metadata } from 'next';
 import { Providers } from "./providers";
+import clsx from "clsx";
+import { fontMono, fontSans } from "@/config/fonts";
 
 import Navbar from "@/components/GenaNavbar";
 import GenaFooterLink from "@/components/GenaFooterLink";
@@ -17,15 +19,21 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body>
+      <body
+        className={clsx(
+          "bg-background font-sans antialiased",
+          fontSans.variable,
+          fontMono.variable,
+        )}
+      >
         <Providers>
           <div className="relative flex flex-col h-dvh">
             <Navbar />
-            <main className="container flex-grow mx-auto max-w-7xl px-2 pt-2 sm:px-6 sm:pt-4">
+            <main>
               {children}
             </main>
 
-            <footer className="w-full pt-6 pb-3 flex justify-center items-center">
+            <footer className="w-full py-32 flex justify-center items-center">
               <GenaFooterLink />
             </footer>
           </div>
