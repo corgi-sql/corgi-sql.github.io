@@ -144,28 +144,25 @@ function RankingsPage() {
     <div>
       <div className="container flex-grow mx-auto max-w-7xl px-2 pt-2 sm:px-6 sm:pt-4">
         <div id="corgi-logo">
-          <Image
-            src={corgiLogo}
-            width={500}
-            height={500}
-            alt="Corgi logo"
-          />
+          <Image src={corgiLogo} width={500} height={500} alt="Corgi logo" />
         </div>
         <div id="rankingTables" className="flex flex-wrap">
           <div id="columnOne" className="flex-1 p-4 text-center">
-             <h2 className="pb-4">{"Hard-Evals - Execution Match Scores"}</h2>
-             <Table>
-               <TableHeader>
-                 <TableColumn className="text-center">Model</TableColumn>
-                 <TableColumn className="text-center">Dev</TableColumn>
-                 <TableColumn className="text-center">Test</TableColumn>
-               </TableHeader>
-               <TableBody>
+            <h2 className="pb-4">{"Hard-Evals - Execution Match Scores"}</h2>
+            <Table>
+              <TableHeader>
+                <TableColumn className="text-center">Model</TableColumn>
+                <TableColumn className="text-center">Dev</TableColumn>
+                <TableColumn className="text-center">Test</TableColumn>
+              </TableHeader>
+              <TableBody>
                 {data.map((item, index) => (
                   <TableRow key={item + "-" + index}>
                     <TableCell>
                       <div className="text-center">{item.model}</div>
-                      <div className="text-xs text-gray-400 text-center">{item.company}</div>
+                      <div className="text-xs text-gray-400 text-center">
+                        {item.company}
+                      </div>
                     </TableCell>
                     <TableCell className="text-center">{item.dev}</TableCell>
                     <TableCell className="text-center">{item.test}</TableCell>
@@ -177,23 +174,25 @@ function RankingsPage() {
           <div id="columnTwo" className="flex-1 p-4 text-center">
             <h2 className="pb-4">{"Soft-Evals"}</h2>
             <Table>
-               <TableHeader>
-               <TableColumn className="text-center">Model</TableColumn>
-               <TableColumn className="text-center">Dev</TableColumn>
-               <TableColumn className="text-center">Test</TableColumn>
-            </TableHeader>
-            <TableBody>
-              {data.map((item, index) => (
-                <TableRow key={item + "-" + index}>
-                  <TableCell>
-                    <div className="text-center">{item.model}</div>
-                    <div className="text-xs text-gray-400 text-center">{item.company}</div>
-                  </TableCell>
-                  <TableCell className="text-center">{item.dev}</TableCell>
-                  <TableCell className="text-center">{item.test}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
+              <TableHeader>
+                <TableColumn className="text-center">Model</TableColumn>
+                <TableColumn className="text-center">Dev</TableColumn>
+                <TableColumn className="text-center">Test</TableColumn>
+              </TableHeader>
+              <TableBody>
+                {data.map((item, index) => (
+                  <TableRow key={item + "-" + index}>
+                    <TableCell>
+                      <div className="text-center">{item.model}</div>
+                      <div className="text-xs text-gray-400 text-center">
+                        {item.company}
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-center">{item.dev}</TableCell>
+                    <TableCell className="text-center">{item.test}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
             </Table>
           </div>
         </div>
@@ -203,7 +202,9 @@ function RankingsPage() {
           <Card>
             <CardBody>
               <div className="whitespace-pre-wrap p-8">
-              {"Hello! This is the CORGI SQL benchmark. The CORGI benchmark was made to push the boundaries of txt2sql in the generative AI era. There are a few noticeable differences between CORGI and previous txt2sql benchmarks:\n    1. x% of the questions are recommendation or prediction based natural language queries. These queries are \"soft evaluated\" with human input.\n    2. CORGIv1.0 has business domain databases and queries, designed to test domain-specific lingo.\n    3. There are many more tables and relations per database in CORGI than previous benchmarks.\n    4. There is no test split. Groups are free to experiment with zero-shot/template methods or generate train data themselves. \n    For more information, check out our paper! For citation, use: XXXXXXX. Happy CORGI-ing!"}
+                {
+                  'Hi! This is the CORGI SQL benchmark. The CORGI benchmark was made to push the boundaries of txt2sql in the generative AI era. There are a few noticeable differences between CORGI and previous txt2sql benchmarks:\n    1. x% of the questions are recommendation or prediction based natural language queries. These queries are "soft evaluated" with human input.\n    2. CORGIv1.0 has business domain databases and queries, designed to test domain-specific lingo.\n    3. There are many more tables and relations per database in CORGI than previous benchmarks.\n    4. There is no test split. Groups are free to experiment with zero-shot/template methods or generate train data themselves. \n    For more information, check out our paper! For citation, use: XXXXXXX. Happy CORGI-ing!'
+                }
               </div>
             </CardBody>
           </Card>
@@ -213,7 +214,7 @@ function RankingsPage() {
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 
