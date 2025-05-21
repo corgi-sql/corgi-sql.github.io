@@ -26,6 +26,7 @@ interface QuestionData {
   question_id: number;
   question_text: string;
   answers: Answer[];
+  token: string;
 }
 
 function EvaluatePage() {
@@ -82,6 +83,7 @@ function EvaluatePage() {
         answer_id_1: questionData.answers[0].answer_id,
         answer_id_2: questionData.answers[1].answer_id,
         better_answer_id: betterId,
+        token: questionData.token,
       };
 
       const response = await fetch(
