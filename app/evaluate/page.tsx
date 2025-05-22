@@ -151,7 +151,14 @@ function EvaluatePage() {
                 <TableBody>
                   <TableRow>
                     <TableCell className="border align-text-top">
-                      ({questionData.question_db}) {questionData.question_text}
+                      <div className="flex justify-between items-start">
+                        <span className="flex-1">
+                          {questionData.question_text}
+                        </span>
+                        <span className="text-red-400 ml-4 flex-shrink-0">
+                          ({questionData.question_db} database)
+                        </span>
+                      </div>
                     </TableCell>
                   </TableRow>
                 </TableBody>
