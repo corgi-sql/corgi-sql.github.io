@@ -3,13 +3,30 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
-import { Button } from "@heroui/react";
+import {
+  Button,
+  Table,
+  TableHeader,
+  TableColumn,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@heroui/react";
 import corgiLogo from "@/assets/corgi_logo.png";
 import DatabaseSchemaContribution from "@/components/DatabaseSchemaContribution";
 import CorgiInfoSection from "@/components/CorgiInfoSection";
 import QueryContribution from "@/components/QueryContribution";
 
 function ContributePage() {
+  const databaseData = [
+    {
+      name: "TBD",
+      tableCount: "X",
+      bestScore: "XX.X",
+      averageScore: "XX.X",
+    },
+  ];
+
   return (
     <div>
       <div className="container flex-grow mx-auto max-w-7xl px-2 pt-2 sm:px-6 sm:pt-4">
@@ -164,6 +181,64 @@ function ContributePage() {
                 <QueryContribution />
               </CardFooter>
             </Card>
+          </div>
+
+          {/* Database Performance Table */}
+          <div className="mt-16 mb-8">
+            <h2 className="text-2xl font-bold text-center mb-6">
+              Database Schema Performance
+            </h2>
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Your database could be the next challenge that pushes txt2sql
+              research forward!
+              <br />
+              See how contributed database schemas perform across different
+              models.
+            </p>
+
+            <div className="max-w-4xl mx-auto">
+              <Table>
+                <TableHeader>
+                  <TableColumn className="text-center">
+                    Database Name
+                  </TableColumn>
+                  <TableColumn className="text-center">
+                    Number of Tables
+                  </TableColumn>
+                  <TableColumn className="text-center">
+                    Best Performing Score
+                  </TableColumn>
+                  <TableColumn className="text-center">
+                    Average Score
+                  </TableColumn>
+                </TableHeader>
+                <TableBody>
+                  {databaseData.map((item, index) => (
+                    <TableRow key={`database-${index}`}>
+                      <TableCell className="text-center font-medium">
+                        {item.name}
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {item.tableCount}
+                      </TableCell>
+                      <TableCell className="text-center text-green-600 font-semibold">
+                        {item.bestScore}%
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {item.averageScore}%
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+
+            <div className="text-center mt-6">
+              <p className="text-sm text-gray-500">
+                Database performance measured across evaluated models in the
+                benchmark
+              </p>
+            </div>
           </div>
         </div>
       </div>

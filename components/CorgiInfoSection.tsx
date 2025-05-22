@@ -16,6 +16,7 @@ function CorgiInfoSection() {
         <div className="flex mt-8 gap-8 justify-center">
           <Button className="w-64">{"CORGI v1.0 Dev Split"}</Button>
           <Button className="w-64">{"CORGI Paper"}</Button>
+          <Button className="w-64">{"How to Submit"}</Button>
         </div>
       </div>
     </div>
