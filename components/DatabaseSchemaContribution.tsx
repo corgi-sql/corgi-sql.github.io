@@ -49,7 +49,10 @@ Best regards`);
 
   return (
     <>
-      <Button onClick={onOpen} className="w-64">
+      <Button
+        onClick={onOpen}
+        className="w-64 bg-white text-carnelian font-semibold"
+      >
         Contribute Database Schema
       </Button>
 

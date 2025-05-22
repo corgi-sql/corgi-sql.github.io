@@ -116,7 +116,7 @@ function ContributePage() {
               href="https://github.com/genaasia/txt2sql"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-64"
+              className="w-64 bg-white text-carnelian font-semibold"
             >
               {"Contribute Code"}
             </Button>
