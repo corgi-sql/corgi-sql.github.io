@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
 import { Button, Textarea } from "@heroui/react";
 import corgiLogo from "@/assets/corgi_logo.png";
+import DatabaseSchemaContribution from "@/components/DatabaseSchemaContribution";
 
 function ContributePage() {
   return (
@@ -119,7 +120,7 @@ function ContributePage() {
             >
               {"Contribute Code"}
             </Button>
-            <Button className="w-64">{"Contribute Database Schema"}</Button>
+            <DatabaseSchemaContribution />
           </div>
           <div className="mt-20 text-white text-2xl text-center">
             {"Queries you want to add?"}
