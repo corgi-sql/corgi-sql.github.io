@@ -20,7 +20,8 @@ function DatabaseSchemaContribution() {
     const subject = encodeURIComponent(
       "Database Schema Contribution - CORGI SQL",
     );
-    const body = encodeURIComponent(`Hi CORGI SQL Team,
+    const body = encodeURIComponent(`[Please attach schema files]
+Hi CORGI SQL Team,
 
 I would like to contribute a database schema to the CORGI benchmark.
 
@@ -32,8 +33,6 @@ Schema Details:
 - Number of tables: [X]
 - Domain/Industry: [e.g., e-commerce, healthcare, finance]
 - Data complexity: [simple/moderate/complex]
-
-Please let me know the best way to share the schema files with you.
 
 Best regards`);
 
@@ -51,7 +50,7 @@ Best regards`);
     <>
       <Button
         onClick={onOpen}
-        className="w-64 bg-white text-carnelian font-semibold"
+        className="w-full bg-carnelian text-white font-semibold"
       >
         Contribute Database Schema
       </Button>
