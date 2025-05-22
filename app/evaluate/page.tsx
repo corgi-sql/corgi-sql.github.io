@@ -19,11 +19,11 @@ import {
 interface Answer {
   answer_id: number;
   answer_text: string;
-  model: string;
 }
 
 interface QuestionData {
   question_id: number;
+  question_db: string;
   question_text: string;
   answers: Answer[];
   token: string;
@@ -151,7 +151,7 @@ function EvaluatePage() {
                 <TableBody>
                   <TableRow>
                     <TableCell className="border align-text-top">
-                      {questionData.question_text}
+                      ({questionData.question_db}) {questionData.question_text}
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -170,10 +170,10 @@ function EvaluatePage() {
               <Table removeWrapper layout="fixed">
                 <TableHeader>
                   <TableColumn className="border text-center">
-                    Option 1 ({questionData.answers[0].model})
+                    Option 1
                   </TableColumn>
                   <TableColumn className="border text-center">
-                    Option 2 ({questionData.answers[1].model})
+                    Option 2
                   </TableColumn>
                 </TableHeader>
                 <TableBody>
@@ -222,7 +222,7 @@ function EvaluatePage() {
               <Table layout="fixed">
                 <TableHeader>
                   <TableColumn className="border text-center">
-                    Option 1 ({questionData.answers[0].model})
+                    Option 1
                   </TableColumn>
                 </TableHeader>
                 <TableBody>
@@ -250,7 +250,7 @@ function EvaluatePage() {
               <Table layout="fixed">
                 <TableHeader>
                   <TableColumn className="border text-center">
-                    Option 2 ({questionData.answers[1].model})
+                    Option 2
                   </TableColumn>
                 </TableHeader>
                 <TableBody>
