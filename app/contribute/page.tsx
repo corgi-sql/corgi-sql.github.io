@@ -17,6 +17,14 @@ import DatabaseSchemaContribution from "@/components/DatabaseSchemaContribution"
 import CorgiInfoSection from "@/components/CorgiInfoSection";
 import QueryContribution from "@/components/QueryContribution";
 
+function NumberedCircle({ number }: { number: number }) {
+  return (
+    <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
+      {number}
+    </div>
+  );
+}
+
 function ContributePage() {
   const databaseData = [
     {
@@ -44,9 +52,7 @@ function ContributePage() {
             <Card className="h-full">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
-                    1
-                  </div>
+                  <NumberedCircle number={1} />
                   <h2 className="text-xl font-semibold">
                     Test your model against our benchmark!
                   </h2>
@@ -74,9 +80,7 @@ function ContributePage() {
             <Card className="h-full">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
-                    2
-                  </div>
+                  <NumberedCircle number={2} />
                   <h2 className="text-xl font-semibold">
                     Evaluate soft-eval model responses
                   </h2>
@@ -104,9 +108,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
-                    3
-                  </div>
+                  <NumberedCircle number={3} />
                   <h2 className="text-xl font-semibold">
                     Contribute to our open-source PyPI package
                   </h2>
@@ -136,9 +138,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
-                    4
-                  </div>
+                  <NumberedCircle number={4} />
                   <h2 className="text-xl font-semibold">
                     Send in a database schema
                   </h2>
@@ -161,9 +161,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
-                    5
-                  </div>
+                  <NumberedCircle number={5} />
                   <h2 className="text-xl font-semibold">
                     Contribute natural language queries
                   </h2>
