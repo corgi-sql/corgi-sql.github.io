@@ -44,7 +44,7 @@ function ContributePage() {
             <Card className="h-full">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
                     1
                   </div>
                   <h2 className="text-xl font-semibold">
@@ -74,7 +74,7 @@ function ContributePage() {
             <Card className="h-full">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
                     2
                   </div>
                   <h2 className="text-xl font-semibold">
@@ -104,7 +104,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
                     3
                   </div>
                   <h2 className="text-xl font-semibold">
@@ -136,7 +136,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
                     4
                   </div>
                   <h2 className="text-xl font-semibold">
@@ -161,7 +161,7 @@ function ContributePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 min-w-8 min-h-8 bg-carnelian text-white rounded-full flex items-center justify-center font-bold text-sm leading-none">
                     5
                   </div>
                   <h2 className="text-xl font-semibold">

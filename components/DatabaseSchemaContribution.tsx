@@ -36,7 +36,7 @@ Schema Details:
 
 Best regards`);
 
-    window.location.href = `mailto:corgi@gena.co?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:unsojo@cornell.edu?subject=${subject}&body=${body}`;
   };
 
   const handleFileUpload = () => {
