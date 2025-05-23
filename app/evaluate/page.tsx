@@ -14,7 +14,6 @@ import {
   TableRow,
   TableCell,
 } from "@heroui/react";
-import CorgiInfoSection from "@/components/CorgiInfoSection";
 
 // Define types for our API responses
 interface Answer {
@@ -42,6 +41,22 @@ function EvaluatePage() {
   // State to track submission success
   const [submitted, setSubmitted] = useState(false);
 
+  async function handleApiError(response: Response) {
+    let errorMessage = `${response.status}`;
+
+    try {
+      const errorData = await response.json();
+      if (errorData.detail) {
+        errorMessage = `${response.status} ${errorData.detail}`;
+      }
+    } catch (parseError) {
+      // If we can't parse the response, fall back to status code
+      console.error("Could not parse error response:", parseError);
+    }
+
+    throw new Error(errorMessage);
+  }
+
   // Fetch a random question when the component mounts
   useEffect(() => {
     async function fetchRandomQuestion() {
@@ -54,7 +69,7 @@ function EvaluatePage() {
         );
 
         if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
+          await handleApiError(response);
         }
 
         const data = await response.json();
@@ -99,7 +114,7 @@ function EvaluatePage() {
       );
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        await handleApiError(response);
       }
 
       // Mark as submitted successfully
@@ -288,7 +303,7 @@ function EvaluatePage() {
           <div className="text-center py-10">No question available</div>
         )}
       </div>
-      <CorgiInfoSection />
+      <div className="bg-carnelian h-16 w-full"></div>
     </div>
   );
 }
