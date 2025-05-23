@@ -240,7 +240,7 @@ function ContributePage() {
           </div>
         </div>
       </div>
-      <CorgiInfoSection />
+      <div className="bg-carnelian h-16 w-full"></div>
     </div>
   );
 }
