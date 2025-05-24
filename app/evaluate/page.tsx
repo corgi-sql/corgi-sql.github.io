@@ -65,7 +65,7 @@ function EvaluatePage() {
 
       try {
         const response = await fetch(
-          "https://txt2sql-backend.staging.gena.co/random-question",
+          "https://txt2sql-backend.gena.co/random-question",
         );
 
         if (!response.ok) {
@@ -103,7 +103,7 @@ function EvaluatePage() {
       };
 
       const response = await fetch(
-        "https://txt2sql-backend.staging.gena.co/submit-result",
+        "https://txt2sql-backend.gena.co/submit-result",
         {
           method: "POST",
           headers: {
