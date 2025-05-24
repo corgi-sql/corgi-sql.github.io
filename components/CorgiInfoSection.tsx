@@ -108,6 +108,10 @@ function CorgiInfoSection() {
                   Read the Paper
                 </Button>
                 <Button
+                  as="a"
+                  href="https://docs.google.com/document/d/1pVwOxEENK9XC9yCTN0Z5PAJC0s3U24rKwHVCg4MlwGU/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto bg-gray-800 text-white font-semibold px-8 py-3 text-base hover:bg-gray-700 transition-colors"
                   size="lg"
                 >

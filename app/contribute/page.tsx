@@ -67,8 +67,10 @@ function ContributePage() {
               </CardBody>
               <CardFooter className="pt-4">
                 <Button
-                  as={NextLink}
-                  href="/rankings"
+                  as="a"
+                  href="https://docs.google.com/document/d/1pVwOxEENK9XC9yCTN0Z5PAJC0s3U24rKwHVCg4MlwGU/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full bg-carnelian text-white font-semibold"
                 >
                   Submit Model
