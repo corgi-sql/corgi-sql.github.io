@@ -49,7 +49,7 @@ function ContributePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contribution Option 1 */}
-            <Card className="h-full">
+            <Card className="bg-gray-50 p-6 border-l-4 h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <NumberedCircle number={1} />
@@ -58,7 +58,7 @@ function ContributePage() {
                   </h2>
                 </div>
               </CardHeader>
-              <CardBody className="pt-0">
+              <CardBody className="pt-0 flex-1">
                 <p className="text-base">
                   This is the easiest way to contribute to the txt2sql
                   community! Test your model performance against other models on
@@ -79,7 +79,7 @@ function ContributePage() {
             </Card>
 
             {/* Contribution Option 2 */}
-            <Card className="h-full">
+            <Card className="bg-gray-50 p-6 border-l-4 h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <NumberedCircle number={2} />
@@ -88,7 +88,7 @@ function ContributePage() {
                   </h2>
                 </div>
               </CardHeader>
-              <CardBody className="pt-0">
+              <CardBody className="pt-0 flex-1">
                 <p className="text-base">
                   Every single binary evaluation is accounted for in our
                   soft-eval ranking. Help us evaluate the best models by
@@ -107,7 +107,7 @@ function ContributePage() {
             </Card>
 
             {/* Contribution Option 3 */}
-            <Card className="h-full flex flex-col">
+            <Card className="bg-gray-50 p-6 border-l-4 h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <NumberedCircle number={3} />
@@ -137,7 +137,7 @@ function ContributePage() {
             </Card>
 
             {/* Contribution Option 4 */}
-            <Card className="h-full flex flex-col">
+            <Card className="bg-gray-50 p-6 border-l-4 h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <NumberedCircle number={4} />
@@ -160,7 +160,7 @@ function ContributePage() {
             </Card>
 
             {/* Contribution Option 5 */}
-            <Card className="h-full flex flex-col">
+            <Card className="bg-gray-50 p-6 border-l-4 h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <NumberedCircle number={5} />
