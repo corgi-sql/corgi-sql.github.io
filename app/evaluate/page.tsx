@@ -5,8 +5,6 @@ import Image from "next/image";
 import corgiLogo from "@/assets/corgi_logo.png";
 import {
   Button,
-  Card,
-  CardBody,
   Table,
   TableHeader,
   TableColumn,
@@ -186,10 +184,7 @@ function EvaluatePage() {
             </div>
 
             {/* Desktop view */}
-            <div
-              id="desktopBetterResponseTable"
-              className="flex hidden md:block"
-            >
+            <div id="desktopBetterResponseTable" className="flex md:block">
               <Table removeWrapper layout="fixed">
                 <TableHeader>
                   <TableColumn className="border text-center">

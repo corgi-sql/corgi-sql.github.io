@@ -22,10 +22,10 @@ function CorgiInfoSection() {
                   <strong className="text-carnelian">
                     CORGI SQL benchmark
                   </strong>{" "}
-                  — designed to push the boundaries of text-to-SQL in the
-                  generative AI era. CORGI represents a significant evolution in
-                  how we evaluate and understand natural language database
-                  querying capabilities.
+                  hosted by Cornell University and Gena. The CORGI benchmark was
+                  made to push the boundaries of txt2sql in the generative AI
+                  era. There are a few noticeable differences between CORGI and
+                  previous txt2sql benchmarks.
                 </p>
               </div>
 
@@ -38,9 +38,10 @@ function CorgiInfoSection() {
                         Soft Evaluation System
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        A significant portion of questions focus on
-                        recommendation and prediction queries, evaluated through
-                        human-in-the-loop assessment for nuanced understanding.
+                        A significant portion of the questions are
+                        recommendation or prediction based natural language
+                        queries. These queries are "soft evaluated" with human
+                        input.
                       </p>
                     </div>
                   </div>
@@ -53,9 +54,8 @@ function CorgiInfoSection() {
                         Business Domain Focus
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        CORGI v1.0 features real-world business databases and
-                        queries, testing domain-specific terminology and
-                        practical applications.
+                        CORGIv1.0 has business domain databases and queries,
+                        designed to test domain-specific lingo.
                       </p>
                     </div>
                   </div>
@@ -68,9 +68,9 @@ function CorgiInfoSection() {
                         Complex Schema Design
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        Enhanced complexity with significantly more tables and
-                        relationships per database compared to previous
-                        benchmarks.
+                        There are many more tables and relations per database in
+                        CORGI than previous benchmarks. Many schemas are based
+                        on real industry schema designs.
                       </p>
                     </div>
                   </div>
@@ -83,9 +83,9 @@ function CorgiInfoSection() {
                         Flexible Evaluation
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        No rigid test split — encouraging zero-shot methods,
-                        templates, and creative training data generation
-                        approaches.
+                        There is no test split. Groups are free to experiment
+                        with zero-shot/template methods or generate train data
+                        themselves.
                       </p>
                     </div>
                   </div>
@@ -94,7 +94,7 @@ function CorgiInfoSection() {
 
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 border-t border-gray-200">
-                <Button
+                {/* <Button
                   className="w-full sm:w-auto bg-carnelian text-white font-semibold px-8 py-3 text-base hover:bg-carnelian/90 transition-colors"
                   size="lg"
                 >
@@ -106,7 +106,7 @@ function CorgiInfoSection() {
                   variant="bordered"
                 >
                   Read the Paper
-                </Button>
+                </Button> */}
                 <Button
                   as="a"
                   href="https://docs.google.com/document/d/1pVwOxEENK9XC9yCTN0Z5PAJC0s3U24rKwHVCg4MlwGU/"
