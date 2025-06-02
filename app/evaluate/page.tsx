@@ -3,15 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import corgiLogo from "@/assets/corgi_logo.png";
-import {
-  Button,
-  Table,
-  TableHeader,
-  TableColumn,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@heroui/react";
+import { Button } from "@heroui/react";
+import Markdown from "react-markdown";
 
 // Define types for our API responses
 interface Answer {
@@ -26,8 +19,6 @@ interface QuestionData {
   answers: Answer[];
   token: string;
 }
-
-import Markdown from "react-markdown";
 
 function EvaluatePage() {
   // State to store the fetched question data
@@ -156,163 +147,128 @@ function EvaluatePage() {
           </div>
         ) : questionData ? (
           <>
-            <div className="max-w-xl m-auto">
+            {/* Question Section */}
+            <div className="max-w-4xl mx-auto mb-8">
               <div className="pb-4 text-center">
-                <h2>Prompt</h2>
+                <h2 className="text-base font-semibold">Prompt</h2>
               </div>
-              <Table hideHeader removeWrapper layout="fixed">
-                <TableHeader>
-                  <TableColumn className="border text-center">{""}</TableColumn>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="border align-text-top">
-                      <div className="flex justify-between items-start">
-                        <span className="flex-1">
-                          {questionData.question_text}
-                        </span>
-                        <span className="text-red-400 ml-4 flex-shrink-0">
-                          ({questionData.question_db} database)
-                        </span>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <div className="border rounded-lg p-4 bg-gray-50">
+                <div className="flex justify-between items-start">
+                  <span className="flex-1 text-base">
+                    {questionData.question_text}
+                  </span>
+                  <span className="text-red-400 ml-4 flex-shrink-0">
+                    ({questionData.question_db} database)
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="pt-4 sm:pt-8 pb-4 text-center">
-              <h2>Which is the better response?</h2>
+            {/* Question Header */}
+            <div className="text-center mb-6">
+              <h2 className="text-base font-semibold">
+                Which is the better response?
+              </h2>
             </div>
 
-            {/* Desktop view */}
-            <div id="desktopBetterResponseTable" className="flex md:block">
-              <Table removeWrapper layout="fixed">
-                <TableHeader>
-                  <TableColumn className="border text-center">
-                    Option 1
-                  </TableColumn>
-                  <TableColumn className="border text-center">
-                    Option 2
-                  </TableColumn>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="border align-text-top">
-                      <div className="max-h-64 overflow-y-auto p-3">
-                        <Markdown>
-                          {questionData.answers[0].answer_text}
-                        </Markdown>
-                      </div>
-                    </TableCell>
-                    <TableCell className="border align-text-top">
-                      <div className="max-h-64 overflow-y-auto p-3">
-                        <Markdown>
-                          {questionData.answers[1].answer_text}
-                        </Markdown>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="border text-center">
-                      <Button
-                        className="bg-carnelian text-white"
-                        onClick={() =>
-                          submitResult(questionData.answers[0].answer_id)
-                        }
-                        disabled={submitting}
-                      >
-                        {submitting ? "Submitting..." : "Option 1 is better"}
-                      </Button>
-                    </TableCell>
-                    <TableCell className="border text-center">
-                      <Button
-                        className="bg-carnelian text-white"
-                        onClick={() =>
-                          submitResult(questionData.answers[1].answer_id)
-                        }
-                        disabled={submitting}
-                      >
-                        {submitting ? "Submitting..." : "Option 2 is better"}
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            {/* Desktop Layout */}
+            <div className="hidden md:block max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                {/* Option 1 */}
+                <div className="border rounded-lg">
+                  <div className="bg-gray-100 px-4 py-2 border-b">
+                    <h3 className="font-semibold text-center">Option 1</h3>
+                  </div>
+                  <div className="p-4 max-h-64 overflow-y-auto prose prose-sm max-w-none">
+                    <Markdown>{questionData.answers[0].answer_text}</Markdown>
+                  </div>
+                </div>
+
+                {/* Option 2 */}
+                <div className="border rounded-lg">
+                  <div className="bg-gray-100 px-4 py-2 border-b">
+                    <h3 className="font-semibold text-center">Option 2</h3>
+                  </div>
+                  <div className="p-4 max-h-64 overflow-y-auto prose prose-sm max-w-none">
+                    <Markdown>{questionData.answers[1].answer_text}</Markdown>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop Buttons */}
+              <div className="grid grid-cols-2 gap-6">
+                <Button
+                  className="bg-carnelian text-white w-full"
+                  size="lg"
+                  onClick={() =>
+                    submitResult(questionData.answers[0].answer_id)
+                  }
+                  disabled={submitting}
+                >
+                  {submitting ? "Submitting..." : "Option 1 is better"}
+                </Button>
+                <Button
+                  className="bg-carnelian text-white w-full"
+                  size="lg"
+                  onClick={() =>
+                    submitResult(questionData.answers[1].answer_id)
+                  }
+                  disabled={submitting}
+                >
+                  {submitting ? "Submitting..." : "Option 2 is better"}
+                </Button>
+              </div>
             </div>
 
-            {/* Mobile view */}
-            <div id="mobileBetterResponseTable" className="md:hidden">
-              <Table layout="fixed">
-                <TableHeader>
-                  <TableColumn className="border text-center">
-                    Option 1
-                  </TableColumn>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="border align-text-top">
-                      <div className="p-3">
-                        <Markdown>
-                          {questionData.answers[0].answer_text}
-                        </Markdown>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="border text-center">
-                      <Button
-                        className="bg-carnelian text-white"
-                        onClick={() =>
-                          submitResult(questionData.answers[0].answer_id)
-                        }
-                        disabled={submitting}
-                      >
-                        {submitting ? "Submitting..." : "Option 1 is better"}
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-              <div className="mb-4" />
-              <Table layout="fixed">
-                <TableHeader>
-                  <TableColumn className="border text-center">
-                    Option 2
-                  </TableColumn>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="border align-text-top">
-                      <div className="p-3">
-                        <Markdown>
-                          {questionData.answers[1].answer_text}
-                        </Markdown>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="border text-center">
-                      <Button
-                        className="bg-carnelian text-white"
-                        onClick={() =>
-                          submitResult(questionData.answers[1].answer_id)
-                        }
-                        disabled={submitting}
-                      >
-                        {submitting ? "Submitting..." : "Option 2 is better"}
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            {/* Mobile Layout */}
+            <div className="md:hidden max-w-2xl mx-auto space-y-6">
+              {/* Option 1 */}
+              <div className="border rounded-lg">
+                <div className="bg-gray-100 px-4 py-2 border-b">
+                  <h3 className="font-semibold text-center">Option 1</h3>
+                </div>
+                <div className="p-4 prose prose-sm max-w-none">
+                  <Markdown>{questionData.answers[0].answer_text}</Markdown>
+                </div>
+                <div className="p-4 border-t">
+                  <Button
+                    className="bg-carnelian text-white w-full"
+                    onClick={() =>
+                      submitResult(questionData.answers[0].answer_id)
+                    }
+                    disabled={submitting}
+                  >
+                    {submitting ? "Submitting..." : "Option 1 is better"}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Option 2 */}
+              <div className="border rounded-lg">
+                <div className="bg-gray-100 px-4 py-2 border-b">
+                  <h3 className="font-semibold text-center">Option 2</h3>
+                </div>
+                <div className="p-4 prose prose-sm max-w-none">
+                  <Markdown>{questionData.answers[1].answer_text}</Markdown>
+                </div>
+                <div className="p-4 border-t">
+                  <Button
+                    className="bg-carnelian text-white w-full"
+                    onClick={() =>
+                      submitResult(questionData.answers[1].answer_id)
+                    }
+                    disabled={submitting}
+                  >
+                    {submitting ? "Submitting..." : "Option 2 is better"}
+                  </Button>
+                </div>
+              </div>
             </div>
           </>
         ) : (
           <div className="text-center py-10">No question available</div>
         )}
       </div>
-      <div className="bg-carnelian h-16 w-full"></div>
     </div>
   );
 }
