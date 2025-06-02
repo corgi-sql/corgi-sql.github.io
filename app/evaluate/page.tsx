@@ -27,6 +27,8 @@ interface QuestionData {
   token: string;
 }
 
+import Markdown from "react-markdown";
+
 function EvaluatePage() {
   // State to store the fetched question data
   const [questionData, setQuestionData] = useState<QuestionData | null>(null);
@@ -197,13 +199,17 @@ function EvaluatePage() {
                 <TableBody>
                   <TableRow>
                     <TableCell className="border align-text-top">
-                      <div className="max-h-64 overflow-y-auto">
-                        {questionData.answers[0].answer_text}
+                      <div className="max-h-64 overflow-y-auto p-3">
+                        <Markdown>
+                          {questionData.answers[0].answer_text}
+                        </Markdown>
                       </div>
                     </TableCell>
                     <TableCell className="border align-text-top">
-                      <div className="max-h-64 overflow-y-auto">
-                        {questionData.answers[1].answer_text}
+                      <div className="max-h-64 overflow-y-auto p-3">
+                        <Markdown>
+                          {questionData.answers[1].answer_text}
+                        </Markdown>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -246,7 +252,11 @@ function EvaluatePage() {
                 <TableBody>
                   <TableRow>
                     <TableCell className="border align-text-top">
-                      {questionData.answers[0].answer_text}
+                      <div className="p-3">
+                        <Markdown>
+                          {questionData.answers[0].answer_text}
+                        </Markdown>
+                      </div>
                     </TableCell>
                   </TableRow>
                   <TableRow>
@@ -274,7 +284,11 @@ function EvaluatePage() {
                 <TableBody>
                   <TableRow>
                     <TableCell className="border align-text-top">
-                      {questionData.answers[1].answer_text}
+                      <div className="p-3">
+                        <Markdown>
+                          {questionData.answers[1].answer_text}
+                        </Markdown>
+                      </div>
                     </TableCell>
                   </TableRow>
                   <TableRow>
