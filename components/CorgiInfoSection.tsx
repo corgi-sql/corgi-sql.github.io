@@ -22,10 +22,9 @@ function CorgiInfoSection() {
                   <strong className="text-carnelian">
                     CORGI SQL benchmark
                   </strong>{" "}
-                  hosted by Cornell University and Gena. The CORGI benchmark was
-                  made to push the boundaries of txt2sql in the generative AI
-                  era. There are a few noticeable differences between CORGI and
-                  previous txt2sql benchmarks.
+                  . The CORGI benchmark was made to push the boundaries of
+                  txt2sql in the generative AI era. There are a few noticeable
+                  differences between CORGI and previous txt2sql benchmarks.
                 </p>
               </div>
 
